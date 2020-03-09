@@ -1,13 +1,59 @@
-# Auth0 Vue.js Samples
+# Scenario #1 - Logging In and Gated Content
 
-[![CircleCI](https://circleci.com/gh/auth0-samples/auth0-vue-samples.svg?style=svg)](https://circleci.com/gh/auth0-samples/auth0-vue-samples)
+This sample demonstrates:
 
-This is the sample code for the [Auth0 Vue.js Quickstart](https://auth0.com/docs/quickstart/spa/vuejs).
+- Logging in to Auth0 using Redirect Mode
+- Accessing profile information that has been provided in the ID token
+- Gated content. The `/profile` route is not accessible without having first logged in
 
-There are two sample applications:
+## Project setup
 
-- [01 - Login](./01-Login) — demonstrates logging in and viewing profile information
-- [02 - Calling an API](./02-Calling-an-API) — demonstrates how to call a third-party API using access tokens
+```bash
+npm install
+```
+
+### Configuration
+
+The project needs to be configured with your Auth0 domain and client ID in order for the authentication flow to work.
+
+To do this, first copy `auth_config.json.example` into a new file in the same folder called `auth_config.json`, and replace the values within with your own Auth0 application credentials:
+
+```json
+{
+  "domain": "<YOUR AUTH0 DOMAIN>",
+  "clientId": "<YOUR AUTH0 CLIENT ID>"
+}
+```
+
+### Compiles and hot-reloads for development
+
+```bash
+npm run serve
+```
+
+## Deployment
+
+### Compiles and minifies for production
+
+```bash
+npm run build
+```
+
+### Docker build
+
+To build and run the Docker image, run `exec.sh`, or `exec.ps1` on Windows.
+
+### Run your tests
+
+```bash
+npm run test
+```
+
+### Lints and fixes files
+
+```bash
+npm run lint
+```
 
 ## What is Auth0?
 
@@ -35,5 +81,4 @@ If you have found a bug or if you have a feature request, please report them at 
 
 ## License
 
-This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for more info.
-
+This project is licensed under the MIT license. See the [LICENSE](../LICENSE) file for more info.

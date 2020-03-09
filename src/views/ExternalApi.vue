@@ -33,9 +33,8 @@ export default {
   methods: {
     async callApi() {
       const accessToken = await this.$auth.getTokenSilently();
-
-      try {
-        const { data } = await this.$http.get("/api/external", {
+        console.error(accessToken)
+        const { data } = await this.$http.get("http://localhost:8080/api/private/recommendation/1", {
           headers: {
             Authorization: `Bearer ${accessToken}`
           }
@@ -43,9 +42,6 @@ export default {
 
         this.apiMessage = data;
         this.executed = true;
-      } catch (e) {
-        this.apiMessage = `Error: the server responded with '${e.response.status}: ${e.response.statusText}'`;
-      }
     }
   }
 };
